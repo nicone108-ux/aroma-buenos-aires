@@ -1,6 +1,6 @@
-.header {
-      background-image: url("https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600&auto=format&fit=crop");
 
+.header {
+  background-image: url("../public/images/main-fondo.jpg");
   background-size: cover;
   background-position: center;
 

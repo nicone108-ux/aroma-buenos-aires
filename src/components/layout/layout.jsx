@@ -1,12 +1,18 @@
-import ItemListContainer from "../items/ItemListContainer.jsx";
-//import estilo from "./Layout.module.css"
+import { Outlet } from "react-router-dom";
+import Header from "./Header.jsx";
+import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
 
-function Layout () {
+function Layout() {
   return (
     <>
-        <ItemListContainer />
+      <Nav />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }
-
-export default Layout;
+export default Layout

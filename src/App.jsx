@@ -1,19 +1,34 @@
-import Header from "./components/layout/Header.jsx";
-import Nav from "./components/layout/Nav.jsx";
-import Footer from "./components/layout/Footer.jsx";
+import { Routes, Route } from "react-router-dom";
+
 import Layout from "./components/layout/layout.jsx";
+import Home from "./components/pages/Home.jsx";
+import ItemListContainer from "./components/items/ItemListContainer.jsx";
+import Contacto from "./components/pages/contacto.jsx"
 //import StyleAPP from "./App.css";
 //import './App.css'
 
-function App()  {
+function App() {
   return (
-    <>
-      <Nav/>
-      <Header/> 
-        <Layout />
-      <Footer/>
-    </>
-  )
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/productos" element={<ItemListContainer />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Route>
+    </Routes>
+  );
 }
- 
+
 export default App
+
+
+// function App()  {
+//   return (
+//     <>
+//       <Nav/>
+//       <Header/> 
+//         <Layout />
+//       <Footer/>
+//     </>
+//   )
+// }
