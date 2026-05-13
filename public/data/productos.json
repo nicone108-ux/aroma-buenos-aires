@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nombre": "Aqua Elegance",
+    "marca": "Kenzo",
+    "precio": 45000,
+    "stock": 10,
+    "imagen": "/images/aqua.png",
+    "descripcion": "Perfume fresco con notas cítricas y acuáticas."
+  },
+  {
+    "id": 2,
+    "nombre": "Noir Intense",
+    "marca": "Maison Lux",
+    "precio": 62000,
+    "stock": 7,
+    "imagen": "/images/noir.png",
+    "descripcion": "Fragancia intensa con notas amaderadas y especiadas."
+  },
+  {
+    "id": 3,
+    "nombre": "Rose Divine",
+    "marca": "L'Occitane",
+    "precio": 53000,
+    "stock": 12,
+    "imagen": "/images/rose.png",
+    "descripcion": "Perfume floral con notas de rosa, vainilla y almizcle."
+  }
+]
