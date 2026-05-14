@@ -18,7 +18,7 @@ function Item({ nombre, marca, precio, descripcion, stock, imagen }) {
     const MouseArriba = () => {console.log(`Vas a comprar ${cantidad} ${nombre}`);
 };
 return (
-    <div>
+    <div style={{ flexWrap: "wrap", border: "1px solid #ccc", padding: "15px", marginBottom: "20px", borderRadius: "5px", backgroundColor: "#f9f9f9" }}>
       <h1 style={{ fontSize: "25px", marginBottom: "20px" }}>{nombre}</h1>
       <p><strong>Marca:</strong> {marca}</p>
       <p><strong>Descripción:</strong> {descripcion}</p>

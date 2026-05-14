@@ -20,15 +20,3 @@ function App() {
 }
 
 export default App
-
-
-// function App()  {
-//   return (
-//     <>
-//       <Nav/>
-//       <Header/> 
-//         <Layout />
-//       <Footer/>
-//     </>
-//   )
-// }

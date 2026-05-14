@@ -4,7 +4,7 @@ function Home() {
   return (
     <section className="home">
       <h2>
-        Bienvenidos a Aroma Buenos Aires
+        Bienvenidos
       </h2>
 
       <p>
