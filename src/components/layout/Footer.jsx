@@ -1,4 +1,4 @@
-import "./footer.css";
+import "./Footer.css";
 import lucia from "../../assets/lucia.jpg"
 import camila from "../../assets/camila.jpg"
 import nicolas from "../../assets/nicolas.jpg"
