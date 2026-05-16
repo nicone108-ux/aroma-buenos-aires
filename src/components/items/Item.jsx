@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useCart } from "../../context/CartContext.jsx";
 
-function Item({ nombre, marca, precio, descripcion, stock, imagen }) {
+function Item({ id, nombre, marca, precio, descripcion, stock, imagen }) {
+    const producto = { id, nombre, marca, precio, descripcion, stock, imagen };
     const [cantidad, setCantidad] = useState(0);
+    const { addToCart } = useCart();
 
     const incrementar = () => {
         if (cantidad < stock) 
@@ -11,20 +14,25 @@ function Item({ nombre, marca, precio, descripcion, stock, imagen }) {
         if(cantidad > 0) 
             setCantidad(cantidad - 1)
         }
-
-    const CompraClick = () => {
-    alert(`¡Agregaste ${cantidad} ${nombre} al carrito!`);
+    const AgregarCarritoClick = () => {
+        if (cantidad > 0) {
+            addToCart(producto, cantidad);
+            alert(`¡Agregaste ${cantidad} ${nombre} al carrito!`);
+        } else {
+            alert("Selecciona una cantidad mayor a 0 para agregar al carrito.");
+        }
     };
-    const MouseArriba = () => {console.log(`Vas a comprar ${cantidad} ${nombre}`);
-};
+    const MouseArriba = () => {
+        console.log(`Vas a comprar ${cantidad} ${nombre}`);
+    };
 return (
     <div style={{ flexWrap: "wrap", border: "1px solid #ccc", padding: "15px", marginBottom: "20px", borderRadius: "5px", backgroundColor: "#f9f9f9" }}>
       <h1 style={{ fontSize: "25px", marginBottom: "20px" }}>{nombre}</h1>
-      <p><strong>Marca:</strong> {marca}</p>
-      <p><strong>Descripción:</strong> {descripcion}</p>
-      <p><strong>Precio:</strong> ${precio} ARS</p>
-      <p><strong>Stock:</strong> {stock}</p>
-      <img src={imagen} alt={nombre} style={{ width: "70px", height: "250px", border: "1px solid #ccc" }} />
+      <p><strong>Marca:</strong> {producto.marca}</p>
+      <p><strong>Descripción:</strong> {producto.descripcion}</p>
+      <p><strong>Precio:</strong> ${producto.precio} ARS</p>
+      <p><strong>Stock:</strong> {producto.stock}</p>
+      <img src={producto.imagen} alt={producto.nombre} style={{ width: "70px", height: "250px", border: "1px solid #ccc" }} />
       <p><strong>Cantidad a comprar:</strong></p>
 
       <button onClick={decrementar}>-</button> 
@@ -32,14 +40,12 @@ return (
       <button onClick={incrementar}>+</button>
       <div>
       <button style={{ marginTop: "10px", padding: "10px 20px", backgroundColor: "#639c2d", border: "none", color: "#fff", cursor: "pointer" }}
-        onClick={CompraClick}
+        onClick={AgregarCarritoClick}
         onMouseOver={MouseArriba}>
-        Comprar Producto
+        Agregar al Carrito
       </button>
     </div>
         </div>
-
-
   );
 }
-export default Item
+export default Item;
