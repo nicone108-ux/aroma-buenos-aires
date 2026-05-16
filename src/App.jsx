@@ -4,7 +4,7 @@ import Layout from "./components/layout/layout.jsx";
 import Home from "./components/pages/Home.jsx";
 import ItemListContainer from "./components/items/ItemListContainer.jsx";
 import Cart from "./components/pages/Carrito.jsx";
-import Contacto from "./components/pages/contacto.jsx"
+import Contacto from "./components/pages/Contacto.jsx"
 //import StyleAPP from "./App.css";
 //import './App.css'
 
